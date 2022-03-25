@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/project-utility-tools/static/css/main.4e2b54ba.css",
+    "main.js": "/project-utility-tools/static/js/main.226d6d9f.js",
+    "index.html": "/project-utility-tools/index.html",
+    "main.4e2b54ba.css.map": "/project-utility-tools/static/css/main.4e2b54ba.css.map",
+    "main.226d6d9f.js.map": "/project-utility-tools/static/js/main.226d6d9f.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.4e2b54ba.css",
+    "static/js/main.226d6d9f.js"
+  ]
+}
