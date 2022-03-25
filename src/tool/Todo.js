@@ -4,6 +4,8 @@ import Tbutton from "../components/tool-button"
 import { Row, Col } from "react-bootstrap"
 import Hero from "../components/hero"
 import { motion, AnimatePresence, AnimateSharedLayout } from "framer-motion"
+import moment from "moment"
+import axios from "../config/axios"
 const Todo = () => {
   const [todos, dispatch] = useReducer(reducer, [])
   console.log("todos", todos)
@@ -21,6 +23,10 @@ const Todo = () => {
       case 'toggle':
         var temp = [...state];
         temp[action.payload.index].completed = !action.payload.status
+        // var temp1 = temp.filter((x) => x.completed == false)
+        // var temp2 = temp.filter((x) => x.completed == true)
+        // var temp3 = temp1.concat(temp2)
+
         return temp
       default:
         return state
@@ -29,7 +35,7 @@ const Todo = () => {
   }
   function add_todo(state, todo) {
     var temp = [...state]
-    temp.push({ id: Date.now(), title: todo, completed: false })
+    temp.push({ id: Date.now(), title: todo, completed: false, created_date: Date.now() })
     return temp
   }
   function delete_todo(state, index) {
@@ -41,7 +47,15 @@ const Todo = () => {
     dispatch({ type: "add", payload: { title } })
     setTitle("")
   }
-
+  const callApi = () => {
+    var data = {
+      first_name: "daksh",
+      last_name: "khatri",
+    }
+    axios.post("/auth/user-add", data)
+      .then((res) => console.log("user-add-res", res))
+      .catch((err) => console.error("err", err))
+  }
 
   return (
     <div className="todo-container">
@@ -60,9 +74,10 @@ const Todo = () => {
             animate="visible"
           >
 
-            <AnimatePresence >
+            <AnimatePresence layout>
               {todos && todos.length > 0 &&
                 todos.map((todo, index) => (
+
                   <motion.div
                     layout
                     initial={{ opacity: 0, x: -100 }}
@@ -72,12 +87,14 @@ const Todo = () => {
                     className="d-flex flex-row"
                     transition={{
                       type: "spring",
-                      bounce: 0.75,
-                      stiffness: 120
+                      bounce: 1,
+                      stiffness: 250,
+                      duration: 2
                     }}
+
                   >
                     <div
-                      className={`w-100 d-flex align-items-center justify-content-between todo-item  my-1 ${todo.completed ? 'todo-completed' : ''}`}
+                      className={`w-100 d-flex align-items-center justify-content-between todo-item  mb-4 ${todo.completed ? 'todo-completed' : ''}`}
                     >
                       <div
                         className="w-100"
@@ -91,6 +108,14 @@ const Todo = () => {
                       <div>
                         <i className="fas fa-trash" onClick={() => dispatch({ type: "delete", payload: { index } })}></i>
                       </div>
+                      <motion.div
+                        initial={{ opacity: 0, x: -100 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ delay: 0.4 }}
+                        className="create-date"
+                      >
+                        {moment(todo?.created_date).format("hh:mm a, Do MMM,YYYY")}
+                      </motion.div>
                     </div>
 
                   </motion.div>
@@ -106,7 +131,11 @@ const Todo = () => {
           </motion.div>
         </Col>
       </Row>
-
+      {/* <Row onClick={() => callApi()}>
+        <button >
+          call api
+        </button>
+      </Row> */}
     </div>
   )
 }
