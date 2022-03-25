@@ -1,0 +1,10 @@
+.tinput{
+  border-radius: 10px;
+  border:2px solid var(--font-secondary-color);
+  background: #7f553970 ;
+  padding: .6rem .8rem;
+  color: var(--font-primary-color)
+}
+.tinput:focus{
+  outline: 0;
+}

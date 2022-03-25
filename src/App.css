@@ -1,0 +1,24 @@
+:root{
+  --primary-color: #9c6644 ;
+  --secondary-color: #7f5539 ;
+  --font-primary-color: #ede0d4;
+  --font-secondary-color: #e6ccb2;
+  --heading-color:#ddb892;
+  --sub-heading: #b08968
+
+}
+body{
+  background: var(--primary-color) !important;
+  color: var(--font-primary-color) !important;
+
+}
+.container{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+.todo-container{
+  padding:3rem;
+  margin: 0 auto;
+  max-width: 800px;
+}

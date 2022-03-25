@@ -1,0 +1,33 @@
+.todo-item{
+  border:1px solid var(--secondary-color);
+  color:var(--secondary-color);
+  background: var(--font-secondary-color);
+  border-radius: 8px;
+  padding:.2rem .7rem;
+  cursor:pointer;
+  transition: .3s;
+
+}
+/* .todo-item:hover{
+  background: var(--primary-color);
+  transition: .3s;
+  border:1px solid var(--font-secondary-color);
+  color:var(--font-primary-color)
+}    */
+.todo-completed{
+  /* background: var(--primary-color);
+  border:1px solid var(--font-secondary-color);
+  color:var(--font-primary-color) */
+}
+.add-todo-btn{
+  color: var(--font-secondary-color);
+  padding:.5rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+.tool-checkbox{
+  background: transparent;
+}
+.custom-muted-text{
+  color:var(--font-secondary-color)
+}
