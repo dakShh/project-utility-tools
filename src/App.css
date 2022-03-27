@@ -4,21 +4,18 @@
   --font-primary-color: #ede0d4;
   --font-secondary-color: #e6ccb2;
   --heading-color:#ddb892;
-  --sub-heading: #b08968
+  --sub-heading: #b08968;
 
 }
 body{
   background: var(--primary-color) !important;
+  /* background:  linear-gradient(0deg, rgba(156, 102, 68) 0%, rgba(195,141,107) 46%, rgb(199, 150, 120) 100%) !important; */
   color: var(--font-primary-color) !important;
-
+  height:100vh;
+  font-family: 'Josefin Sans', sans-serif !important;
 }
 .container{
   display:flex;
   justify-content: center;
   align-items: center;
-}
-.todo-container{
-  padding:3rem;
-  margin: 0 auto;
-  max-width: 800px;
 }

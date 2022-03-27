@@ -1,0 +1,63 @@
+.todo-container{
+  padding:3rem;
+  margin: 0 auto;
+  max-width: 800px;
+}
+.create-date{
+  position:absolute;
+  right: 0;
+  bottom: -25px;
+  font-size: 14px;
+  color: #ffffff82;
+  font-style: italic;
+ }
+ .header-date{
+  color: #ffffff82;
+  font-size: 1.4rem;
+  font-style: italic;
+ }
+ .todo-item{
+  border:1px solid var(--secondary-color);
+  color:var(--secondary-color);
+  background: var(--font-secondary-color);
+  border-radius: 8px;
+  padding:.2rem .7rem;
+  cursor:pointer;
+  transition: .3s;
+  position: relative;
+}
+.add-todo-btn{
+  color: var(--font-secondary-color);
+  padding:.5rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+.custom-muted-text{
+  color:var(--font-secondary-color)
+}
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px){
+  .todo-container{
+    padding:1.8rem
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+
+}
