@@ -8,3 +8,6 @@
 .tinput:focus{
   outline: 0;
 }
+.tinput::placeholder{
+  color:var(--font-secondary-color)
+}

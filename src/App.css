@@ -8,11 +8,16 @@
 
 }
 body{
-  background: var(--primary-color) !important;
+  /* background: var(--primary-color) !important; */
   /* background:  linear-gradient(0deg, rgba(156, 102, 68) 0%, rgba(195,141,107) 46%, rgb(199, 150, 120) 100%) !important; */
   color: var(--font-primary-color) !important;
   height:100vh;
   font-family: 'Josefin Sans', sans-serif !important;
+  background-color: #533725 !important;
+  opacity: 1; 
+  background-image:  radial-gradient(#e6ccb22d .6px, transparent 1.4500000000000002px), radial-gradient(#e6ccb23d .8px, #331f12 1.4500000000000002px);
+  background-size: 58px 58px;
+  background-position: 0 0,29px 29px;
 }
 .container{
   display:flex;

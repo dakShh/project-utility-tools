@@ -12,7 +12,9 @@ const Todo = () => {
   const { createToast } = useContext(UtilityContext)
 
   const [todos, dispatch] = useReducer(reducer, [])
-  console.log("todos", todos)
+  const [error, setError] = useState(false)
+  console.log("err", error)
+  // console.log("todos", todos)
   const [title, setTitle] = useState("")
 
   function reducer(state, action) {
@@ -42,9 +44,18 @@ const Todo = () => {
   }
 
   const handleAdd = () => {
-    dispatch({ type: "add", payload: { title } })
-    createToast("success", `'${title}' Added !`)
-    setTitle("")
+    if (title == "" || title == null) {
+      createToast("error", `Title cannot be blank!`)
+      setError(true)
+      setTimeout(() => {
+        setError(false)
+      }, 1000);
+      setTitle("")
+    } else {
+      dispatch({ type: "add", payload: { title } })
+      createToast("success", `'${title}' Added !`)
+      setTitle("")
+    }
   }
   const handleDelete = (index) => {
     dispatch({ type: "delete", payload: { index } })
@@ -71,7 +82,17 @@ const Todo = () => {
       </div>
       <Row>
         <Col md={12} className="d-flex flex-row align-items-center">
-          <Tinput onChange={(val) => setTitle(val)} value={title} className="w-100" />
+          <Tinput
+            onChange={(val) => {
+              if (title !== "" && title !== null) {
+                setError(false)
+              }
+              setTitle(val)
+            }}
+            value={title}
+            placeholder={"Enter title for task"}
+            className={`${error ? 'bounce' : ''} w-100`}
+          />
           {/* <Tbutton content="Add" onClick={() => handleAdd()} /> */}
           <i className="fas fa-plus p-3 add-todo-btn" onClick={() => handleAdd()} ></i>
         </Col>

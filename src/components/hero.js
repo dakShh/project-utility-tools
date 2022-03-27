@@ -3,7 +3,7 @@ import React from 'react'
 const hero = () => {
   return (
     <h1 className="hero-title">
-      TODOS
+      TO-DO List
     </h1>
   )
 }
