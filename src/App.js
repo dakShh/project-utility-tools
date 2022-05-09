@@ -1,7 +1,6 @@
 import './App.css';
 import "./css/main.css"
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Todo from "./tool/Todo"
 import toast, { Toaster } from 'react-hot-toast';
 import { UtilityContext } from "./components/utility-context"
 import RoutesUtility from "./routes"

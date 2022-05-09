@@ -1,10 +1,9 @@
-import React, { useState } from "react"
+import React from "react"
 import {
   BrowserRouter as Router,
   Routes,
   Route,
   Navigate,
-  Link
 } from "react-router-dom";
 import Todo from "../tool/Todo"
 import Auth from "../components/auth/auth"
